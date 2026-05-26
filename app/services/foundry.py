@@ -1,15 +1,14 @@
 import asyncio
 import re
-from azure.identity import DefaultAzureCredential
 from azure.ai.projects import AIProjectClient
+from azure.core.credentials import AzureKeyCredential
 from app.config import settings
 
 # ---------------------------------------------------------------------------
 # Module-level singletons — created once, reused across all requests.
-# get_openai_client() returns a standard openai.OpenAI client pointed at
-# the Foundry endpoint with Entra ID auth injected automatically.
+# Uses API key auth instead of managed identity for simpler deployment.
 # ---------------------------------------------------------------------------
-_credential = DefaultAzureCredential()
+_credential = AzureKeyCredential(settings.AZURE_API_KEY)
 _project_client = AIProjectClient(
     endpoint=settings.AZURE_PROJECT_ENDPOINT,
     credential=_credential,

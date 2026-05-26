@@ -7,6 +7,9 @@ class Settings(BaseSettings):
     # https://{resource}.services.ai.azure.com/api/projects/{project-name}
     AZURE_PROJECT_ENDPOINT: str
 
+    # API key from Azure AI Services resource (Keys and Endpoint page)
+    AZURE_API_KEY: str = ""
+
     # Name of the published Foundry workflow (as shown in the portal)
     FOUNDRY_WORKFLOW_NAME: str = "Research-agent"
 
