@@ -14,9 +14,9 @@ class Settings(BaseSettings):
     CORS_ORIGINS: List[str] = ["http://localhost:5173"]
 
     # JWT auth
-    JWT_SECRET_KEY: str = "change-me-to-a-random-secret-in-production"
+    JWT_SECRET_KEY: str = "HeGTuhA9nlZFf0Rb7k302UyPxF-C-FE-0BTMOs8dEKJHY1kP8OnKYK3JzgS0ed3r"
     JWT_ALGORITHM: str = "HS256"
-    JWT_EXPIRY_HOURS: int = 24
+    JWT_EXPIRY_HOURS: int = 168
 
     class Config:
         env_file = ".env"
